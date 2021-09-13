@@ -8,7 +8,7 @@ permalink: /:title
 
 Tokens (or lexical units) are the smallest unit of a program. Their types are:
 
-- Keywords 
+- Keywords
 - Operators
 - Literals
 - Identifiers
