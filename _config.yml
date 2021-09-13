@@ -28,7 +28,7 @@ twitter_username:
 github_username:  jdhruv1503
 
 # Build settings
-theme: jekyll-theme-cayman-blog
+theme: minima
 plugins:
   - jekyll-feed
 
