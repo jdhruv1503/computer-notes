@@ -33,8 +33,11 @@ Strings can be traversed using `for ch in stringName:`. `ch` takes the value of 
 ### Slicing
 
 Using `stringName[n:m]` will give the slice of the string of characters with indices n to m (n inclusive, m exclusive).
+
 Using `stringName[n:]` will give the slice of the string of characters from indice n to the end of string (n inclusive).
+
 Using `stringName[:m]` will give the slice of the string of characters from the start of string to indice m (m exclusive).
+
 Using `stringName[n:m:s]` will give the slice of the string of every sth character with indices n to m (n inclusive, m exclusive) (using s=2 will skip every other character).
 
 This works for negative indices too. If indices are out of bounds, empty string is returned rather than an error.
