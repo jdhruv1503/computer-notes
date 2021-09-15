@@ -26,6 +26,7 @@ Strings can be traversed using `for ch in stringName:`. `ch` takes the value of 
 
 `ord`
 : Gives ASCII value of character, e.g `ord("A")` = 65
+
 `chr`
 : Gives character from ASCII value, e.g `chr(65)` = "A"
 
