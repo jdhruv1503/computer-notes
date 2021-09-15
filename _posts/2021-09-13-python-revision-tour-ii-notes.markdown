@@ -4,86 +4,108 @@ date:   2021-09-13 11:40:42 +0530
 categories: notes
 permalink: /:title
 ---
-## Tokens
+## Strings
 
-Tokens (or lexical units) are the smallest unit of a program. Their types are:
+Strings in Python are sequences of characters. The characters can be accessed using `stringName[index]`, index starts from 0 from the left and -1 to the right.
 
-- Keywords
-- Operators
-- Literals
-- Identifiers
-- Punctuators
+Length of strings can be determined using `len(stringName)` which returns an int with no. of characters in the string.
 
-### Keywords
+Note
+: You cannot change individual letters in a string by assignment (hence it is an immutable datatype). `stringName[2]="a"` gives an error.
 
-Predefined words with special meaning such as `True`, `assert`, `break`, `elif`, `while`, etc.
+Strings can be traversed using `for ch in stringName:`. `ch` takes the value of each character in the string.
 
-### Identifiers
+### String operators
 
-Names given to parts of a program such as functions, variables, etc.
+- `+`  : "power" + "ful" = "powerful"
+- `*`  : 3 * "ful" = "fulfulful"
+- `in` : "ab" in "abcd" = True
+- `==` : "ab" == "ab" = False (Note: This is case sensitive!)
 
-- Must be non-keyword word with no spaces
-- Must be made up of letters, numbers, and underscores
-- Cannot begin with a number
+### `ord` and `chr`
 
-### Literals
+`ord`
+: Gives ASCII value of character, e.g `ord("A")` = 65
+`chr`
+: Gives character from ASCII value, e.g `chr(65)` = "A"
 
-String literal
-: Sequence of characters. Can be single-line (e.g. `'String'`) or multi-line (e.g. `'''Hello \n World'''`)
+### Slicing
 
-Numeric literal
-: Can be decimal integers (e.g. `2322`), octal integers (e.g. `0o77`), hexadecimal integers (e.g. `0xAF`), floating points (e.g. `-14.55`), or complex numbers (e.g. `5 + 6J`)
+Using `stringName[n:m]` will give the slice of the string of characters with indices n to m (n inclusive, m exclusive).
+Using `stringName[n:]` will give the slice of the string of characters from indice n to the end of string (n inclusive).
+Using `stringName[:m]` will give the slice of the string of characters from the start of string to indice m (m exclusive).
+Using `stringName[n:m:s]` will give the slice of the string of every sth character with indices n to m (n inclusive, m exclusive) (using s=2 will skip every other character).
 
-Boolean literal
-: Can only represent True and False
+This works for negative indices too. If indices are out of bounds, empty string is returned rather than an error.
 
-None literal
-: Can only represent special value None.
+### String functions
 
-### Operators
+|Function|Description|Returns|
+|`capitalize()`|Capitalizes first letter|String|
+|`find(sub,[start,[end]])`|Finds sub in string and returns index|int or null|
+|`isalnum()`|Checks if string is alphanumeric|Boolean|
+|`isalpha()`|Checks if string is alphabetical|Boolean|
+|`isdigit()`|Checks if string is numerical|Boolean|
+|`isspace()`|Checks if string only contains whitespace|Boolean|
+|`islower()`|Checks if string only contains lowercase characters|Boolean|
+|`isupper()`|Checks if string only contains uppercase characters|Boolean|
+|`istitle()`|Checks if string only contains titled words|Boolean|
+|`lower()`|Converts all characters to lowercase|String|
+|`upper()`|Converts all characters to uppercase|String|
+|`title()`|Converts the string to a titled string|String|
+|`startswith(sub)`|Checks if string starts with sub|Boolean|
+|`swapcase()`|Inverts case|String|
+|`partition(sep)`|Partitions string using the given separator|Tuple|
+|`count(sub)`|Counts the no. of instances of sub|int|
+|`lstrip()`|Removes leading whitespace|String|
+|`rstrip()`|Removes trailing whitespace|String|
 
-Tokens that trigger some computation. For example, `and`, `+`, `/`, `<=`, `==`, `=`, etc.
+## Lists
 
-### Punctuators
+Lists can be created using `listName = list()`, or using `listName = list(<sequence>)`, where the sequence can be a String, tuple, another list, etc. A list can be directly input by the user using `listName = eval(input())`.
 
-Punctuation to organize the program, such as `'`, `"`, `[]`, `{}`, `:`, etc.
+A list can be traversed using `for elmt in listName:`, `elmt` takes on the values of elements one-by-one.
 
-## Variables and typing
+### List operators
 
-In Python, variables use dynamic typing, i.e. datatype of a variable can be changed during runtime.
+- `+`  : `[1,2,3,4] + [5,6,7]  = [1,2,3,4,5,6,7]`
+- `*`  : `3 * [1,2,3] = [1,2,3,1,2,3,1,2,3]`
 
-## Simple input/output
+Lists can also be sliced, very similarly to Strings.
+However unlike strings, list elements and slices can be directly changed by assignment, e.g. `listName[0:2] = [5,67]` is valid.
 
-Input can be taken by `variableName = input(stringToBeDisplayed)`. This will return a string `variableName` with the user input.
+## List manipulation
 
-Output can be given by `print(string1ToBeDisplayed, string2ToBeDisplayed, ..., sep=sepString)`. The different strings will be separated by sepString (space by default).
+- `lst.append(item)`     : Adds `item` to the end of list.
+- `lst[index] = value`   : Directly changing values.
+- `del lst[index/slice]` : Deletes given part of list.
 
-## Datatypes
+Note
+: `del lst` deletes the entire `lst` object.
 
-Immutable datatype
-: Cannot be changed during runtime. They are `int`,`boolean`,`string`,`tuple`,`float`.
+Note
+: To make a true copy of a list, use `lst2 = list(lst)`. This creates a new independent copy of the list.
 
-Mutable datatype
-: Can be changed during runtime. They are `list`,`dictionary`,`set`.
+### List functions
 
-### Typecasting
+|Function|Description|Returns|
+|`lst.index(item)`|Returns first index of item|int|
+|`lst.append(item)`|Adds item to list|null|
+|`lst.extend(lst2)`|Adds `lst2` to end of `lst`|null|
+|`lst.insert(pos, item)`|Adds item to list; pos is the index of item BEFORE WHICH item is to be added|null|
+|`lst.pop()`|Removes last element from list and returns it|any datatype|
+|`lst.pop(index)`|Removes element with index `index` from list and returns it|any datatype|
+|`lst.remove(item)`|Removes first instance of `item` from list|null|
+|`lst.clear()`|Empties list|null|
+|`lst.reverse()`|Reverses list|null|
+|`lst.sort()`|Sorts list in ascending order|null|
+|`lst.count(item)`|Counts number of instances of `item` in `lst`|int|
 
-Variable datatype can be forcefully changed using `variableName = newDatatype(oldVariable)`. For example, `myInt = int(input())` will take an input and convert the input string to an integer.
+## Tuples
 
-## Math library functions
+Tuples can be created using `t = tuple()`, or using `t = tuple(<sequence>)`, where the sequence can be a String, another tuple, list, etc. A tuple can be directly input by the user using `t = eval(input())`.
 
-Using `import math` we can use library functions such as 
+Note
+: Single element tuple must be assigned as `t = (3,)` as `t = (3)` makes t an integer.
 
-- `ceil` (round up)
-- `sqrt` (square root)
-- `exp` (exponent with base e)
-- `fabs` (absolute value)
-- `floor` (round down)
-- `log` (logarithm)
-- `log10` (log base 10)
-- `pow` (power)
-- `sin`,`cos`,`tan` (trigonometry)
-- `degrees`,`radians` (inter conversion)
-- `fmod` (modulus)
-- `factorial` (factorial)
-- `gcd` (GCD)
+Tuple operations, slices, indexing, etc. are the same as lists. However elements of a tuple cannot be edited in place as tuples are immutable.
