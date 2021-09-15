@@ -74,7 +74,7 @@ A list can be traversed using `for elmt in listName:`, `elmt` takes on the value
 Lists can also be sliced, very similarly to Strings.
 However unlike strings, list elements and slices can be directly changed by assignment, e.g. `listName[0:2] = [5,67]` is valid.
 
-## List manipulation
+### List manipulation
 
 - `lst.append(item)`     : Adds `item` to the end of list.
 - `lst[index] = value`   : Directly changing values.
@@ -109,3 +109,43 @@ Note
 : Single element tuple must be assigned as `t = (3,)` as `t = (3)` makes t an integer.
 
 Tuple operations, slices, indexing, etc. are the same as lists. However elements of a tuple cannot be edited in place as tuples are immutable.
+
+Tuples can be unpacked as `var1, var2, var3, .... = tuple1`
+
+### Tuple functions
+
+|Function|Description|Returns|
+|`tpl.len()`|Returns length of tuple|int|
+|`tpl.max()`|Returns max element from tuple|any datatype|
+|`tpl.min()`|Returns min element from tuple|any datatype|
+|`tpl.index(item)`|Returns index of first instance of `item` in tuple|int|
+|`tpl.count(item)`|Returns no. of instances of `item` in tuple|int|
+
+## Dictionaries
+
+Dictionaries can be created using `dict = {key1: value1, key2: value2, ....}` and the corresponding value can be accessed using `dict[key]`. Dictionaries have no indexes, only keys.
+
+Dictionaries can be directly changed or added by assignment, e.g. `dict[key] = newValue` is valid. To delete a key:value pair, use `del dict[key]` or `dict.pop(key)`. `in` and `not in` can be used to check for presence of keys (not values).
+
+Dictionaries can be traversed using `for item in dict:`. `item` takes on the different values of keys (not values).
+
+### Dictionary functions
+
+|Function|Description|Returns|
+|`dic.len()`|Returns number of key:value pairs|int|
+|`dict.clear()`|Empties dictionary|null|
+|`dict.get(key)`|Same as `dict[key]`|any datatype|
+|`dict.items()`|Returns list of tuples (key,value)|list|
+|`dict.keys()`|Returns list of all keys|list|
+|`dict.values()`|Returns list of all values|list|
+|`dict.update(dict2)`|Merges key:value pairs of `dict2` into `dict`, replacing `dict` when needed|null|
+
+## Sorting
+
+Sorting using Bubble Sort is comparing adjacent values and switching them if they are in the wrong order. This is repeated until the list is sorted.
+
+![Bubble sort visualization](https://miro.medium.com/max/3840/1*p_wD00rbc6RkA8w6lqqCkg.gif)
+
+Sorting using Insertion Sort is building a sorted list by inserting elements one by one in the correct positions from the unsorted list.
+
+![Insertion sort visualization](https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif)
