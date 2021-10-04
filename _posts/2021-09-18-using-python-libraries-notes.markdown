@@ -1,5 +1,5 @@
 ---
-title:  "Using Python Functions - Notes"
+title:  "(Extra) Using Python Functions - Notes"
 date:   2021-09-18 11:40:42 +0530
 categories: notes
 permalink: /:title
