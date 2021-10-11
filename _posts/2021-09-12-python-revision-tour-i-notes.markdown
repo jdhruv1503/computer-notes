@@ -52,6 +52,9 @@ Punctuation to organize the program, such as `'`, `"`, `[]`, `{}`, `:`, etc.
 
 In Python, variables use dynamic typing, i.e. datatype of a variable can be changed during runtime.
 
+Note
+: `id(object)` returns an integer that is the unique ID assigned to that variable or object by Python.
+
 ## Simple input/output
 
 Input can be taken by `variableName = input(stringToBeDisplayed)`. This will return a string `variableName` with the user input.
@@ -81,7 +84,8 @@ Using `import math` we can use library functions such as
 - `floor` (round down)
 - `log` (logarithm)
 - `log10` (log base 10)
-- `pow` (power)
+- `pow(a,b)` (returns a to the power of b)
+- `pow(a,b,c)` (returns (a^b)%c)
 - `sin`,`cos`,`tan` (trigonometry)
 - `degrees`,`radians` (inter conversion)
 - `fmod` (modulus)

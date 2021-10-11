@@ -136,8 +136,9 @@ Dictionaries can be traversed using `for item in dict:`. `item` takes on the dif
 ### Dictionary functions
 
 |Function|Description|Returns|
-|`dic.len()`|Returns number of key:value pairs|int|
+|`dict.len()`|Returns number of key:value pairs|int|
 |`dict.clear()`|Empties dictionary|null|
+|`dict.popitem()`|Removes the last element that was added to the dictionary (In versions before 3.7, it removes a random item)|null|
 |`dict.get(key)`|Same as `dict[key]`|any datatype|
 |`dict.items()`|Returns list of tuples (key,value)|list|
 |`dict.keys()`|Returns list of all keys|list|
